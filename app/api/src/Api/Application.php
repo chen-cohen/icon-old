@@ -3,6 +3,7 @@
 namespace Api;
 
 use Api\Model\Features;
+use Api\Model\Stock;
 use \Slim\Slim;
 use \Exception;
 
@@ -56,6 +57,12 @@ class Application extends Slim
             $this->response->headers->set('Content-Type', 'application/json');
             $this->response->setBody(json_encode($feature));
         });
+
+		$this->get('/api/stock', function () {
+			return (Stock::getStock());
+			$this->response->headers->set('Content-Type', 'application/json');
+			$this->response->setBody(json_encode(Stock::getStock()));
+		});
     }
 
     public function handleNotFound()
