@@ -9,10 +9,12 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-rtl/dist/css/bootstrap-rtl.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+	  <link rel="stylesheet" href="styles/dashboard.css">
     <!-- endbuild -->
   </head>
   <body ng-app="iconApp">
@@ -21,22 +23,40 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">icon</h3>
-      </div>
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">אייקון זיווד בע"מ</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Dashboard</a></li>
+					<li><a href="#">Settings</a></li>
+					<li><a href="#">Profile</a></li>
+					<li><a href="#">Help</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-left">
+					<li><a href="#">הגדרות</a></li>
+					<li><a href="#">משתמשים</a></li>
+					<li><a href="#">עזרה</a></li>
+				</ul>
+				<form class="navbar-form navbar-right ng-pristine ng-valid">
+					<input type="text" class="form-control" placeholder="חיפוש...">
 
-      <div ng-view=""></div>
+				</form>
+			</div>
+		</div>
+	</div>
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
+	<div ng-view="" class="container-fluid">
+
+	</div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
